@@ -9,7 +9,7 @@ class Deal < ActiveRecord::Base
   
   monetize :amount_to_raise_cents
   
-  CLOSE_TIMELINE = ['Jun 2014', 'Jul 2014', 'Aug 2014', 'Sep 2014', 'Oct 2014', 'Nov 2014', 'Dec 2014', '2015', "Flexible"]
+  CLOSE_TIMELINE = ['Oct 2014', 'Nov 2014', 'Dec 2014', '2015', "Flexible"]
   CAPITAL_TYPE =  ["Debt",  "Equity", "Both", "Flexible"]
   
   # RULES
@@ -99,8 +99,9 @@ class Deal < ActiveRecord::Base
 
   def invalid_deal?
     ( INVALID_DATES.include?(self.close_timeline) ||
-      self.amount_to_raise > 250000 ||
-      INVALID_CAPITAL_TYPES.include?(self.capital_type) 
+      self.amount_to_raise > 200000 ||
+      INVALID_CAPITAL_TYPES.include?(self.capital_type) ||
+      self.address.state != 'GA'
     )
   end
   
