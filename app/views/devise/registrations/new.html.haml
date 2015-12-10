@@ -1,0 +1,49 @@
+= set_header_tab("account")
+
+.errors
+  = display_flash_messages(flash)
+
+%section.container-wrapper
+  .container.sign-up
+    %h1="SIGN UP FOR YOUR ACCOUNT"
+    %p
+      Welcome to GROUNDFLOOR. Complete the information below to create your account. 
+      %a{onclick: "gotoAnchor('#storybd');"}
+      Will GROUNDFLOOR work for you?
+    
+    .row.padded
+      .col-lg-12
+        = render "devise/registrations/create_developer_account", resource: resource
+          
+%section.container-wrapper.odd
+  .container
+    .row.how
+      .col-lg-12
+        %h1="HOW IT WORKS"
+        .callout
+          You bring the deals and the know-how to make them happen. GROUNDFLOOR takes care of the rest.
+      .col-lg-12
+        = image_tag("icons/howitworks-fullline.png")
+      .row-fluid
+        .col-lg-3
+          %p
+            We’re looking for a few good projects. Our first cohort of transactions is beginning to receive funding now.  To have investors consider your deal and to begin gaining support, sign up today and tell us a little about your project--it takes less than 10 minutes.  You can even gain followers for project concepts.  GROUNDFLOOR investors ultimately decide which projects receive funding.
+        .col-lg-3
+          %p
+            Leverage our network and marketing power to get your name out there and begin gaining followers for your project.  Your personal network helps to make your project even more popular, and we have tools to help you. 
+        .col-lg-3
+          %p
+            Proposed transactions that gain enough followers and fit our criteria will be invited to apply for financing.  Our criteria are based on amount, capital type and the timing of the financing required.
+        .col-lg-3
+          %p
+            Upon completion of your application, submission of relevant documentation and a personal interview, we expect to render decisions in the first few months of 2014, for closings targeted after May, 2014.
+
+
+
+%section.container-wrapper.single-padded
+  .container
+    .row-fluid
+      .col-lg-12.callout.text-center
+        Sound good?  Signing up and proposing your first transaction is 
+        %b="free"
+        and takes less than 10 minutes.

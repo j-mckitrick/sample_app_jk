@@ -1,0 +1,94 @@
+%section.hero.developers
+  .container-fluid
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-8
+        %h1.title="WITH THE BANKS, YOU ALREADY"
+        %h1.title="KNOW WHAT YOU'RE GETTING."
+        .subtitle="Take control over financing your next project."
+        = link_to("GET STARTED", new_user_registration_path, class:"btn btn-primary btn-large")
+      .col-xs-12.col-sm-12.col-md-12.col-lg-4
+        =image_tag("headers/screwdrivers.png", class: "tool screwdrivers")
+
+%section.container-wrapper.first.developers.subhero
+  .container.no-pad.main
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        %ul.links
+          %li
+            %a{onclick: "gotoAnchor('#why');"}="Why sign up?"
+          %li
+            %a{onclick: "gotoAnchor('#why');"}="How it works?"
+
+%section.container-wrapper.why
+  .container
+    %h1="WHY SIGN UP?"
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-8
+        .callout
+          You’re ready for a new kind of financing for your real estate projects, one that leaves behind the old days and ways of banks and hard money lenders.
+        .row
+          .col-xs-12.col-sm-12.col-md-12.col-lg-1
+            =image_tag("icons/dev_icon_bank.png")
+          .col-xs-12.col-sm-12.col-md-12.col-lg-5
+            %p
+              Banks are missing good opportunities. We’ve heard from many real estate developers and entrepreneurs who could make more happen with better access to capital, on better terms. GROUNDFLOOR can provide you with the commercial loans you need, enabling you to share your opportunities with millions of online investors via the Web.
+          .col-xs-12.col-sm-12.col-md-12.col-lg-1
+            =image_tag("icons/dev_icon_tag.png")
+          .col-xs-12.col-sm-12.col-md-12.col-lg-5
+            %p
+              Online investors want access to your deals, but these deals were usually limited to accredited investors because of complexity and high legal costs. GROUNDFLOOR solves those problems to open up a vast new source of efficient financing. We handle all the details of sourcing capital from individual lenders, and issue you a commercial loan on familiar terms.
+      .col-xs-12.col-sm-12.col-md-12.col-lg-4
+        .callout
+          Signing up is free and easy.
+        %p
+          Even if you don’t have a transaction to propose yet, just want to learn more or aren’t sure, signing up now ensures you’ll be the first to hear about new product updates so that you can leverage your track record and experience to expand and take advantage of more opportunities, sooner.
+        = link_to("GET STARTED", new_user_registration_path, class:"btn btn-primary btn-large")
+        %label.small
+          Already a member? 
+          = link_to("Login", new_user_session_path)
+
+%section.container-wrapper.odd.how
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-7
+        %h1="HOW IT WORKS"
+        .callout
+          You bring the investment opportunities and the know-how to make them happen.  Combine your network with ours so that your project gains popularity and receives funding.  GROUNDFLOOR takes care of the rest.
+        %table.steps
+          %tr
+            %td
+              %label.icon
+                %span="1"
+            %td
+              %p
+                Leverage our network and marketing power to get your name out there and begin gaining followers for your project. Your personal network can help to make your project even more popular, and we have tools to help you.
+          %tr
+            %td
+              %label.icon
+                %span="2"
+            %td
+              %p
+                We’re looking for a few good investments. Our first cohort of projects is beginning to receive funding now.  To have investors consider your project and to begin gaining support, sign up today and tell us a little about your project--it takes minutes to complete a profile. You can even post potential future projects to see if our investors will consider funding them. GROUNDFLOOR investors ultimately decide which opportunities receive funding.
+          %tr
+            %td
+              %label.icon
+                %span="3"
+            %td
+              %p
+                Proposed projects that gain enough followers and fit <a onclick="gotoAnchor('#criteria');">our criteria</a> will be invited to apply for financing.  Our criteria are based on amount, capital type and the timing of the financing required.
+
+          %tr
+            %td
+              %label.icon
+                %span="4"
+            %td
+              %p
+                Upon completion of your application, submission of relevant documentation and a personal interview, we expect to render decisions in late spring of 2014, for closings targeted after May, 2014.
+
+        .row.action
+          .col-xs-12.col-sm-12.col-md-12.col-lg-3
+            = link_to("GET STARTED", new_user_registration_path, class:"btn btn-primary btn-large", style: "min-width: 140px;")
+          .col-xs-12.col-sm-12.col-md-12.col-lg-9
+            .callout="Signing up and listing your first investment opportunity is free and takes less than 10 minutes."
+      .col-xs-12.col-sm-12.col-md-12.col-lg-4.offset1.pull-right
+        = image_tag("https://groundfloor-assets.s3.amazonaws.com/AlleneAve.jpg")

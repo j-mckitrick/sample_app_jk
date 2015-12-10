@@ -1,0 +1,1037 @@
+body { padding-top: 60px; }
+
+.navbar-brand {
+  padding: 10px;
+  img {
+    width: 185px;
+  }
+}
+
+.navbar-nav>li>a {
+  padding: 0px 20px;
+  font-size: 18px;
+  line-height: 60px;
+  text-shadow: none;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-font-smoothing: antialiased;
+  
+  i.icon-twitter {
+    display: inline-block;
+    text-align: center;
+    font-size: 22px;
+    padding-top: 22px;
+  }
+  i.icon-large {
+    width: 1.5625em;
+  }
+}
+
+.navbar-nav > li > a:hover, .nav > li > a:hover {
+  -webkit-box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.5),inset 0 -3px 0 0 #26a97c;
+  -moz-box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.5),inset 0 -3px 0 0 #26a97c;
+  box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.5),inset 0 -3px 0 0 #26a97c;
+}
+
+.navbar-nav > li.active > a, .nav > li.active > a:hover {
+  -webkit-box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.5),inset 0 -3px 0 0 #26a97c;
+  -moz-box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.5),inset 0 -3px 0 0 #26a97c;
+  box-shadow: inset 0 3px 5px 0 rgba(0,0,0,0.5),inset 0 -3px 0 0 #26a97c;
+
+  i {
+    color:$color4;
+  }
+}
+.navbar-nav > li.callout > a {
+  margin: 9px 0 0 26px;
+  padding: 0 15px;
+  line-height: 42px;
+  font-size: 13px;
+  text-transform: uppercase;
+  background: lighten($color1, 5%);
+  @include border-radius(5px);
+}
+
+.navbar-nav > li.callout > a:hover {
+  background: $color4;
+  color: $white;
+}
+
+.navbar-nav b.caret {
+  position: relative;
+  top: 20px;
+}
+
+//---------------------------------------------------------------
+// Main CSS for wrapping sections 
+//---------------------------------------------------------------
+section.container-wrapper {
+  background-color: $white;
+  margin: 0px;
+  padding: 60px 0px;
+  
+  .padded {
+    margin-top: 40px;
+  }
+
+  &.odd {
+    background-color: $gray-lighter;;
+    border-top: 1px solid $navbar-default-color;
+    border-bottom: 1px solid $navbar-default-color;
+    p {
+      color: $gray-dark;
+    }
+  }
+
+  &.dark {
+    background-color: $color1;
+    color: $white;
+    border-top: 1px solid $navbar-default-color;
+    border-bottom: 1px solid $navbar-default-color;
+  
+    .callout {
+      color: $white;
+    }
+    p,a, a:hover {
+      color: #bbb;
+    }
+  }
+
+  &.blue-callout {
+    background-color: $color2;
+    color: $white;
+
+    h1 {
+      line-height: 50px;
+    }
+
+    .callout {
+      color: $white;
+    }
+    p,a, a:hover {
+      color: $white;
+    }
+    ul {
+      font-size: .9em;
+    }
+    
+    .entry-border {
+      border-left: 1px solid $white;
+    }
+  }
+
+  &.blue {
+    background-color: $color2;
+    color: $white;
+    border-top: 1px solid $navbar-default-color;
+    border-bottom: 1px solid $navbar-default-color;
+    
+    &.no-border {
+      border: none;
+    }
+  
+    .callout {
+      color: $white;
+    }
+    p,a, a:hover {
+      color: #ccc;
+    }
+  }
+
+
+  &.green {
+    background-color: $color4;
+    color: $white;
+    border-top: 1px solid $navbar-default-color;
+    border-bottom: 1px solid $navbar-default-color;
+
+    .callout {
+      color: $white;
+    }
+    p,a, a:hover {
+      color: #ccc;
+    }
+  }
+
+
+  &.last {
+    margin-bottom: 0px;
+  }
+  &.first {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  &.single-padded {
+    padding: 30px 0px;
+  }
+  &.call-to-action {
+    h2 {
+      margin: 5px 0px;
+    }
+  }
+  
+  &.gift {
+    h1 {
+      margin-bottom: 40px;
+    }
+    p {
+      margin-bottom: 40px;
+      font-size: 16px;
+    }
+  }
+}
+
+
+
+
+//---------------------------------------------------------------
+// Heros
+//---------------------------------------------------------------
+.hero {
+  background-color: $color1;
+  background: asset-url('backgrounds/bgnd-darkwood.jpg') no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 400px;
+  color: $white;
+  
+  h1.title:first-child { margin-top: 60px; }
+  h1.title {
+    line-height: 40px;
+    font-size: 3.5em;
+    line-height: 60px;
+  }
+  
+  .subtitle {
+    font-size: 24px;
+    margin-top: 0px;
+    font-weight: 300;
+    line-height: 40px;
+  }
+
+  a {
+    margin-top: 40px;
+    font-weight: normal;
+    
+    &.last {
+      margin-bottom: 40px;
+    }
+  }
+  
+  img.tool {
+    right: 40px;
+    top: 80px;
+    
+    &.level {
+      top: 0px;
+      right: 60px;
+    }
+  }
+  
+  &.next-steps {
+    height: inherit;
+    padding-top: 20px;
+    color: $white;
+    background-color: $color2;
+    background-image: none;
+  
+    a,
+    a:hover {
+      color: #ddd;
+      cursor: pointer;
+    }
+  
+    p {
+      margin-top: 40px;
+      color: $white;
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .btn {
+      color: $white;
+    }
+    table {
+      width: 100%;
+    }
+    .cards {
+      padding-left: $grid-gutter-width;
+      vertical-align: bottom;
+    }
+  }
+  
+  button {
+    width: 200px;
+    font-family: $headings-font-family;
+    font-size: 1.5em;
+    font-weight: 300;
+    margin: 20px 0px;
+  }
+  
+}
+
+//---------------------------------------------------------------
+// Sub Hero
+//---------------------------------------------------------------
+.container-wrapper.subhero {
+  min-height: 100px;
+  padding: 8px 0px 0px 0px;
+  margin: 0px;
+  height: inherit;
+  
+  &.social-actions {
+    min-height: inherit;
+  }
+  
+  .row,
+  .row {
+    margin: 0px;
+  }
+  
+  label {
+    padding-right: 10px;
+    position: relative;
+    bottom: 12px;
+    display: inline-block;
+  }
+  
+  ul.social_actions {
+    display: inline-block;
+  }
+  
+  ul.links {
+    width: inherit;
+    list-style: none;
+    margin: 0px auto;
+    padding: 0px;
+    font-size: 16px;
+    margin-top: 20px;
+  
+    li:first-child { padding-left: 0px; }
+    li:last-child { padding-right: 0px; border: none;}
+    li {
+      float: left;
+      padding: 0px 10px;
+      border-right: 1px solid $gray-light;
+    
+      a,
+      a:hover {
+        font-size: 18px;
+        cursor: pointer;
+        color: $gray-light;
+      }
+    }
+  }
+}
+
+//---------------------------------------------------------------
+// Footer
+//---------------------------------------------------------------
+footer {
+  background-color: $color1;
+  clear: both;
+  color: $white;
+  
+
+  .logo {
+    padding: 20px 0px 10px 0px;
+    text-align:center;
+    img {
+      width: 185px;
+    }
+  }
+  .copyright {
+    border-top: 1px solid $gray;
+    color:lighten($color1, 20%);
+    text-align: center;
+    padding-top: 10px;
+    a {
+      display:inline-block;
+      margin-left:10px;
+    }
+    &.bottom {
+      position:fixed;
+      bottom:0;
+      left:0;
+      right:0;
+      width:100%;
+      font-size:0.85em;
+    }
+  }
+  
+  ul {
+    margin: 5px 0px 0px 0px;
+    list-style: none;
+  }
+  
+  label {
+    margin-top: 20px;
+    color: $white;
+  }
+  p,a, a:hover {
+    color: #bbb;
+  }
+  p {
+    margin: 0px;
+    padding: 0px 0px 5px 0px;
+  }
+  button.btn.btn-small {
+    min-width: inherit;
+    padding: 5px;
+    vertical-align: top;
+  }
+  .border {
+    border-left: 1px solid $gray
+  }
+  
+  ul {
+    padding-left: 0px;
+  }
+}
+
+//---------------------------------------------------------------
+// Developers page css
+//---------------------------------------------------------------
+.callout {
+  color: $gray-medium;
+  font-size: 1.3em;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+
+//---------------------------------------------------------------
+// Index css
+//---------------------------------------------------------------
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.green {
+  color: $color4;
+}
+
+.red {
+  color: $color3;
+}
+
+.blue {
+  color: $color2;
+}
+
+
+.underlined {
+  font-style: italic;
+}
+
+p {
+  font-size: .9em;
+  color: $gray-medium;
+  margin-top: 20px;
+  
+}
+
+figcaption {
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+}
+
+#what h1 {
+  margin-top: 0px;
+}
+
+table.steps {
+  color: $gray;
+  
+  tr {
+    margin-bottom: 10px;
+    
+    td:first-child {
+      width: 40px;
+      text-align: center;
+    }
+    td {
+      padding-bottom: 20px;
+      vertical-align: top;
+      min-height: 40px;
+    
+      h4,p {
+        margin: 2px;
+      }
+    }
+  }
+  
+  .criteria {
+    margin-top: 20px;
+    background-color: $offwhite;
+    th {
+      font-weight: bold;
+      font-size: 20px;
+      color: #000;
+    }
+    td:first-child { 
+      width: 110px; 
+      padding-right: 20px;
+    }
+    td {
+      margin-bottom: 0px;
+      text-align: left;
+      border-top: 1px solid $gray-lighter;
+    }
+  }
+}
+
+
+//---------------------------------------------------------------
+// Icons & Markup
+//---------------------------------------------------------------
+label.icon {
+  text-align: center;
+  background-color: $color2;
+  width: 30px;
+  height: 30px;
+  @include border-radius(50%);
+  color: $white;
+
+  
+  span {
+    position: relative;
+    top: 4px;
+  }
+  
+  i {
+    position: relative;
+    top: 4px;
+  }
+  
+  &.good {
+    background-color: $color4;
+  }
+
+  &.bad {
+    background-color: $color3;
+  }
+  
+  &.maybe {
+    background-color: $yellow;
+    
+    i {
+      top: 5px;
+      left: 1px;
+    }
+  }
+}
+
+img.bordered {
+  display: block;
+  margin-bottom: 20px;
+  width: 94%;
+  max-width: 400px;
+  height: auto;
+  border: solid 4px #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+
+span.link {
+  color: $color2;
+  font-size: 12px;
+  cursor: pointer;
+  
+  &.inline {
+    color: inherit;
+    
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+  .underline {
+    text-decoration: underline;
+  }
+}
+
+ul.padded_list {
+  margin-bottom: 40px;
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+
+//---------------------------------------------------------------
+// Boostrap Overriders
+//---------------------------------------------------------------
+.well {
+  background-color: inherit;
+  border: none;
+  @include border-radius(0px);
+  box-shadow: none;
+  padding: 0px;
+  
+  legend {
+    color: $gray-medium;
+    border: none;
+  }
+  
+  p:first-child {
+    margin-top: 0px;
+  }
+}
+
+.btn {
+  @include border-radius(0px);
+}
+
+//---------------------------------------------------------
+// Dashboard
+//---------------------------------------------------------
+.dashboard {
+  label {
+    font-size: 14px;
+  }
+
+  .headline {
+    p {
+      margin-top: 0px;
+    }
+    a {
+      margin-top: 10px;
+    }
+  }
+  
+  .deal {
+    background-color: $white;
+    margin-bottom: 20px;
+    
+    .placeholder-cover-asset {
+      background-color: $color2;
+      vertical-align: middle;
+      height: 100%;
+      text-align:center;
+      color: $white;
+      text-align: center;
+
+      span {
+        position: relative;
+        font-size: 24px;
+        line-height: 30px;
+        top: 35%;
+      }
+    }
+    
+    header {
+      background-color: $color2;
+      
+      .title {
+        display: inline;
+        position: relative;
+        color: $white;
+        font-size: 28px;
+        font-weight: bold;
+      }
+    
+      span.icon {
+        width: 36px;
+        height: 36px;
+        margin: 0px;
+        padding: 4px;
+        display: inline-block;
+      
+        img {
+          position: relative;
+          top:4px;
+          width: 32px;
+        }
+      }
+      
+      i.fa-building {
+        position: relative;
+        color: $white;
+      }
+    }
+    .card {
+      padding: 10px;
+      color: $gray-medium;
+      
+      h4 {
+        color: $color1;
+        margin: 0px 0px 2px 0px;
+      }
+      
+      label {
+        margin: 0px;
+        line-height: 18px;
+      }
+      
+      .status {
+        text-align: right;
+        font-weight: bold;
+        span.good {
+          color: $color4;
+        }
+        span.bad {
+          color: $color3;
+        }
+      }
+      
+      .placeholder-cover-asset {
+        height: 100%;
+        span {
+          top: 0px;
+          font-size: 16px;
+        }
+        
+        img {
+          left: 20%;
+        }
+      }
+    }
+    
+    ul.actions {
+      list-style: none;
+      font-size: 14px;
+      margin: 2px 0px 0px 0px;
+      padding: 0px;
+
+      li:last-child { border-right: none; }
+      li:first-child { padding-left: 0px; }
+      li {
+        float: left;
+        padding: 0px 5px;
+        border-right: 1px solid $navbar-border;
+      
+        a, a:hover {
+          color: $color2;
+        }
+      }
+    }
+
+    .card-footer {
+      border-top: 1px solid $navbar-border;
+      text-align: center;
+      color: $gray-medium;
+      padding: 20px 0px;
+      font-size: 24px;
+      
+      label {
+        font-size: 12px;
+        display: block;
+      }
+      .border {
+        border-right: 1px solid $navbar-border;
+      }
+    }
+  }
+}
+
+//---------------------------------------------------------------
+// Main CSS for wrapping sections 
+//---------------------------------------------------------------
+.story-board {
+  text-align: center;
+  height: 100%;
+  margin-top: 30px;
+  
+  img {
+    max-height: 150px;
+  }
+  
+  .icon {
+    min-height: 165px;
+  }
+  
+  .step {
+    height: 100%;
+    border-right: 1px solid $navbar-border;
+    margin-left: 0px;
+  }
+  .step:last-child {
+    border-right: none;
+  }
+  
+}
+
+.errors {
+  .alert {
+    text-align: center;
+    @include border-radius(0%);
+    margin-bottom: 2px;
+  }
+  
+  &.no-padding .alert {
+    margin-bottom: 0px;
+  }
+}
+
+.form-horizontal {
+  .control-label {
+    color: $gray-medium;
+  }
+  
+  em {
+    color: $gray-medium;
+    font-size: 10px;
+    font-style: normal;
+    text-decoration: none;
+  }
+  
+  input,
+  textarea,
+  select {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+//---------------------------------------------------------------
+// Public Investments Page
+//---------------------------------------------------------------
+.public-investments {
+  legend {
+    text-align: center;
+    color: $gray;
+    border-bottom: 1px solid $navbar-border;
+    margin-top: 20px;
+  }
+  
+  .under-construction {
+    background-color: $color1;
+    color: $gray-lighter;
+    padding: 10px;
+    border: 4px solid $color2;
+    @include border-radius(8px);
+    
+    img {
+      max-height: 120px;
+    }
+    
+    p:first-child {
+      margin-top: 10px;
+    }
+    p {
+      color: $gray-lighter;
+    }
+    
+    label.title {
+      font-size: 22px;
+      text-align: center;
+      padding-bottom: 4px;
+      border-bottom: 1px solid $color2;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .action-link a {
+    line-height: inherit;
+    height: inherit;
+    margin-top: 10px;
+  }
+  
+  .welcome-header {
+    background-color: $color2;
+    border-color: darken($color2, 20%);
+    color: $offwhite;
+    margin-top: 20px;
+    @include border-radius(4px);
+    
+    span.close {
+      position: relative;
+      bottom: 80px;
+      right:10px;
+      margin-top:0px;
+      clear:both;
+    }
+
+    .message {
+      padding: 20px 10px 10px 20px;
+      strong {
+        color: $white;
+        margin-bottom: 6px;
+        display: block;
+      }
+    }
+    
+    .span12 {
+      padding: 10px;
+    }
+    
+    .numbers {
+      padding-top: 20px;
+
+      i {
+        font-size: 36px;
+      }
+
+      label {
+        font-size: 48px;
+        color: $white;
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        top: 4px;
+      }
+
+      em {
+        display: block;
+        font-size: 12px;
+        text-decoration: none;
+        font-style: normal;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+//---------------------------------------------------------------
+// New Deals Styling
+//---------------------------------------------------------------
+table.new_deals {
+  margin-left: 0px;
+  width: 100%;
+  border-bottom: 1px solid $navbar-border;
+
+  .disabled {
+	  @include opacity(.6);
+  }
+  
+  tr.new-deal {
+    border-left: 1px solid $navbar-border;
+    border-top: 1px solid $navbar-border;
+    border-right: 1px solid $navbar-border;
+    background-color: $white;
+    height:100%;
+    cursor: pointer;
+    
+    td {
+      vertical-align:top;
+      height:100%;
+      
+      &.footer {
+        background-color: $color1;
+      }
+      
+      &.title {
+        vertical-align: middle;
+        padding-left: 10px;
+      }
+      
+      &.placeholder-cover-asset {
+        background-color: $color2;
+        vertical-align: middle;
+        height: 100%;
+        text-align:center;
+        font-size: 14px;
+        color: $white;
+        text-align: center;
+        
+        img {
+          position: inherit;
+          top: inherit;
+          left: inherit;
+          width: 48px;
+        }
+      }
+    }
+    
+    .cover-image {
+      height: 80px;
+      float: left;
+      min-width: 100px;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      overflow: hidden;
+    }
+    
+    table {
+      border-spacing: 0px;
+      td {
+        vertical-align:top;
+        padding-top: 8px;
+        padding-left: 10px;
+        img {
+          width: 48px;
+        }
+      }
+    }
+    
+    label {
+      display: block;
+
+      &.title {
+        padding-left: 5px;
+      }
+    }
+    
+    table.bordered {
+      height: 80px;
+      td {
+        border-left: 1px solid $navbar-border;
+        vertical-align:middle;
+      }
+    }
+
+    .title {
+      font-size: 20px;
+      padding-bottom: 4px;
+    }
+    .summary {
+      float: left;
+      
+      .icon {
+        color: $color2;
+        i {
+          font-size: 40px;
+          position: relative;
+          left: 7px;
+        }
+      }
+    }
+    
+    .location {
+      font-size: 12px;
+      color: $gray-light;
+      line-height: 16px;
+    }
+    .subheadline {
+      line-height: inherit;
+      font-size: 12px;
+      color: $gray-light;
+      line-height: 16px;
+    }
+    
+    .footer {
+      padding: 10px 20px;
+      height: 100%;
+      label {
+        font-size: 24px;
+        margin-top: 0px;
+        padding-top: 10px;
+      }
+
+      em {
+        font-size: 12px;
+        color: $gray-light;
+        font-style: normal;
+      }
+      a {
+        min-width: inherit;
+        margin-top: 10px;
+        margin-left: -10px;
+      }
+    }
+  }
+  
+  .actions {
+    background-color: $color1;
+  }
+}

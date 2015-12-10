@@ -1,0 +1,76 @@
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { id: "user_form", class: "form-horizontal #{(local_assigns[:additional_class].present? ? additional_class : "")}", role: "form" }) do |f|
+  .row
+    .col-lg-6
+      = hidden_field_tag "d", "t"
+      
+      - if local_assigns[:event_token].present?
+        = hidden_field_tag :event_token, event_token
+      
+      .row-fluid
+        .form-group
+          = f.label :name, class: "control-label col-sm-2"
+          .col-sm-8
+            = f.text_field :name, class: "form-control"
+        .form-group
+          = f.label :email, class: "control-label col-sm-2"
+          .col-sm-8
+            = f.email_field :email, class: "form-control"
+        .form-group
+          = f.label :password, class: "control-label col-sm-2"
+          .col-sm-8
+            = f.password_field :password, class: "form-control"
+            
+        = f.fields_for :address do |ff|
+          .form-group
+            = ff.label :city, class: "control-label col-sm-2"
+            .col-sm-8
+              = ff.text_field :city, class: "form-control"
+          .form-group
+            = ff.label :state, class: "control-label col-sm-2"
+            .col-sm-8
+              = ff.select :state, us_states, { include_blank: "Please Select A State" }, { class: "form-control" }
+
+    .col-lg-6
+      = f.fields_for :developer_profile do |fp|
+        .form-group
+          %label.control-label.col-sm-4{:for => "developer_profile_employment" }="Time Commitment"
+          .col-sm-8
+            = fp.select :employment, DeveloperProfile::EMPLOYMENT, { include_blank: "Please select your commitment" }, { class: "form-control" }
+        .form-group
+          %label.control-label.col-sm-4{:for => "developer_profile_experience" }="Years Experience"
+          .col-sm-8
+            = fp.select :experience, DeveloperProfile::EXPERIENCE, { include_blank: "Please select your experience" }, { class: "form-control" }
+        .form-group
+          %label.control-label.col-sm-4{:for => "developer_profile_typical_project_size" }="Typical Project Size"
+          .col-sm-8
+            = fp.select :typical_project_size, DeveloperProfile::TYPICAL_PROJECT_SIZE, { include_blank: "Please select a range" }, { class: "form-control" }
+        .form-group
+          %label.control-label.col-sm-4{:for => "developer_profile_yearly_projects" }="Projects per Year"
+          .col-sm-8
+            = fp.select :yearly_projects, DeveloperProfile::PROJECTS_PER_YEAR, { include_blank: "Please select a range"} , { class: "form-control" }
+        .form-group
+          %label.control-label.col-sm-4{:for => "developer_profile_how_did_you_hear" }="How You Found Us"
+          .col-sm-8
+            = fp.select :how_did_you_hear, DeveloperProfile::WHERE_DID_YOU_HEAR, { include_blank: "Please select an outlet" }, {id: "developer_profile_how_did_you_hear", class: "form-control"}
+
+        .form-group.hide{id: "friend"}
+          %label.control-label.col-sm-4{:for => "developer_how_response", id: "friend_label" }
+          .col-sm-8
+            = fp.text_field :how_response, class: "form-control"
+        
+    
+  .row-fluid.padded
+    .col-lg-12.text-center      
+      %button.btn.btn-primary.btn-lg{ type: "submit" }
+        CREATE ACCOUNT  <i class="icon-chevron-sign-right"></i></button>
+      
+  .row-fluid
+    .form-group
+      .col-sm-10
+        - if local_assigns[:new_account_link].present?
+          = new_account_link
+          %br
+
+        - if local_assigns[:new_developer_account_link].present?
+          = new_developer_account_link    
+          %br

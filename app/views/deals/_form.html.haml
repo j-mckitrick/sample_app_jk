@@ -1,0 +1,66 @@
+= form_for deal, :html => { id: "deal_form", class: "form-horizontal form #{(local_assigns[:additional_class].present? ? additional_class : "")}", role: "form" } do |f|
+  .col-lg-6
+    .row
+      %h4="PROPERTY INFORMATION"
+      .form-group
+        %label.control-label.col-lg-4{"data-original-title" => "Proposal Title", "data-content" => "A descriptive name for this project that will attract investors", "data-placement" => "top", "data-trigger" => "hover", rel: "popover"}
+          Project Title
+          %i.icon-question-sign
+        .col-lg-7
+          = f.text_field :name, class: "form-control required", placeholder: "315 West Street Renovation", maxlength: 50, "data-counter" => "name_counter", "data-counter-max" => 50
+          %em
+            %span{id:'name_counter'}
+              #{(50 - (deal.name.present? ? deal.name.length : 0))} 
+            characters remaining
+          
+      = f.fields_for :address do |ff|
+        .form-group
+          %label.control-label.col-lg-4="City"
+          .col-lg-7
+            = ff.text_field :city, class: "form-control required"
+        .form-group
+          %label.control-label.col-lg-4="State"
+          .col-lg-7
+            = ff.select :state, Address::STATES, { include_blank: "Please select a state" }, { class: "form-control required" }
+        .form-group
+          %label.control-label.col-lg-4="Zipcode"
+          .col-lg-7
+            = ff.text_field :zipcode, class: "form-control required"
+
+      .form-group
+        %label.control-label.col-lg-4{"data-original-title" => "Project Summary", "data-content" => "This is a descriptive and concise summary of the property that you will use to attract investors.", "data-placement" => "top", "data-trigger" => "hover", rel: "popover"}
+          Project Summary
+          %i.icon-question-sign
+        .col-lg-7
+          = f.text_area :short_description, rows: 4, maxlength: 220, class: "form-control required", "data-counter" => "short_description_counter", "data-counter-max" => 220, placeholder: "Refurbished quadraplex with historic charm and significant rental potential. Asset was purchased in foreclosure. All units have rental commitments pending renovation completion."
+          %em
+            %span{id:'short_description_counter'}
+              #{(220 - (deal.short_description.present? ? deal.short_description.length : 0))} 
+            characters remaining
+          
+  .col-lg-6
+    .row
+      %h4="FINANCIAL INFORMATION"
+      .form-group
+        %label.control-label.col-lg-4="Amount To Raise"
+        .col-lg-4
+          .input-group
+            %span.input-group-addon="$"
+            = f.number_field :amount_to_raise, class: "form-control required", onkeypress: "onlyAllowDigits(event);", step: 1000, value: deal.amount_to_raise.dollars.to_i
+            %span.input-group-addon=".00"
+            
+      .form-group
+        %label.control-label.col-lg-4="Capital Type"
+        .col-lg-6
+          = f.select :capital_type, Deal::CAPITAL_TYPE, { include_blank: "Please select capital type" }, { class: "form-control required" }
+      .form-group
+        %label.control-label.col-lg-4="Targeted Close"
+        .col-lg-6
+          = f.select :close_timeline, Deal::CLOSE_TIMELINE, { include_blank: "Please select closing timeframe" }, { class: "form-control required" }
+          
+          
+
+  .row
+    .col-lg-12.text-center
+      %button.btn.btn-primary.btn-lg{ type: "submit", "data-disable-with" => "SUBMITTING PROJECT" }
+        SAVE PROJECT  <i class="icon-chevron-sign-right"></i></button>

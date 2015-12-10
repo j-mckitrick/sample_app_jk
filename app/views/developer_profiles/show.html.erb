@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @developer_profile.user_id %>
+</p>
+
+<p>
+  <strong>Employment:</strong>
+  <%= @developer_profile.employment %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @developer_profile.experience %>
+</p>
+
+<p>
+  <strong>Yearly projects:</strong>
+  <%= @developer_profile.yearly_projects %>
+</p>
+
+<p>
+  <strong>Typical project size:</strong>
+  <%= @developer_profile.typical_project_size %>
+</p>
+
+<p>
+  <strong>How did you hear:</strong>
+  <%= @developer_profile.how_did_you_hear %>
+</p>
+
+<p>
+  <strong>How response:</strong>
+  <%= @developer_profile.how_response %>
+</p>
+
+<p>
+  <strong>Why:</strong>
+  <%= @developer_profile.why %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @developer_profile.state %>
+</p>
+
+<%= link_to 'Edit', edit_developer_profile_path(@developer_profile) %> |
+<%= link_to 'Back', developer_profiles_path %>

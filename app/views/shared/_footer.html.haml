@@ -1,0 +1,38 @@
+%footer{id: "global-footer"}
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-4
+        .logo
+          =link_to(image_tag("logos/logo.png"), "http://www.groundfloor.us")
+        .text-center
+          %p="Finance raised to the power of us"
+
+      - unless content_for(:no_company_links_in_footer)
+        .col-xs-12.col-sm-12.col-md-12.col-lg-2
+          %label="COMPANY"
+          %ul
+            %li
+              =link_to("About", "/about")
+            %li
+              =link_to("News", "/press")
+            %li
+              =link_to("Blog", "http://blog.groundfloor.us")
+            %li
+              &nbsp;
+      .col-xs-12.col-sm-12.col-md-12.col-lg-2
+        %label="LEGAL"
+        %ul
+          %li
+            =link_to "Terms Of Service", "/terms", target: "_blank" 
+          %li
+            =link_to "Privacy Policy", "/privacy", target: "_blank" 
+          
+      .col-xs-12.col-sm-12.col-md-12.col-lg-4
+        - unless content_for(:no_mailing_list_in_footer)
+          %label="SAMPLE APPLICATION"
+          %p
+            Please feel free to contact #{mail_to("chris@groundfloor.us", "us with any questions", subject: "Recruting App Question", class: "blue")} you might have.
+              
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12.text-center.copyright
+        &copy; #{Date.today.year} Groundfloor. All rights reserved. 

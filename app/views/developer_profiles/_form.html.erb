@@ -1,0 +1,53 @@
+<%= form_for(@developer_profile) do |f| %>
+  <% if @developer_profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@developer_profile.errors.count, "error") %> prohibited this developer_profile from being saved:</h2>
+
+      <ul>
+      <% @developer_profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :employment %><br>
+    <%= f.text_field :employment %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br>
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :yearly_projects %><br>
+    <%= f.text_field :yearly_projects %>
+  </div>
+  <div class="field">
+    <%= f.label :typical_project_size %><br>
+    <%= f.text_field :typical_project_size %>
+  </div>
+  <div class="field">
+    <%= f.label :how_did_you_hear %><br>
+    <%= f.text_field :how_did_you_hear %>
+  </div>
+  <div class="field">
+    <%= f.label :how_response %><br>
+    <%= f.text_field :how_response %>
+  </div>
+  <div class="field">
+    <%= f.label :why %><br>
+    <%= f.text_field :why %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,2 +1,4 @@
-# sample_app_jk
-Sample application for Jonathon McKitrick
+recruiting
+==========
+
+Sample app used for recruiting new members. 

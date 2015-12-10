@@ -1,0 +1,37 @@
+= set_header_state("deals")
+
+.errors
+  = display_flash_messages(flash)
+
+%section.container-wrapper
+  .container.deal
+    .row
+      %h1="PROPOSE A NEW TRANSACTION"
+      %p
+        Complete the form below to propose an additional transaction. This information is confidential and will only be used to evaluate your proposal according to our current funding criteria. You can always change or update transaction information later.
+        %a{onclick: "gotoAnchor('#how');"}="How we select transactions for funding."
+    
+    .row.form
+      = render "form", deal: @deal
+            
+%section.container-wrapper.odd.last_call{id: "how"}
+  .container
+    %h1="HOW WE SELECT TRANSACTIONS FOR FUNDING"
+    %p
+      It’s the early days of establishing a new kind of finance for real estate transactions. As a new concept, we can’t take on every type and size of deal just yet. Our first cohort is planned for introduction early this year. Successful U.S. investment opportunities will receive funding if they:
+    .row.story-board
+      .col-lg-4.step
+        .icon
+          = image_tag("icons/dev_icon_cash.png")
+        %p="Require less than $500 thousand of debt financing"
+      .col-lg-4.step
+        .icon
+          = image_tag("icons/dev_icon_usa.png")
+        %p="Gain followers"
+      .col-lg-4.step
+        .icon
+          = image_tag("icons/dev_icon_2013cal.png")
+        %p="Submit an application"
+    %p
+      Have a proposal that fits? Great! Provide us with the basic details of your project and start gaining followers immediately. Once you gain enough followers we’ll invite you to apply for financing. The amount of followers you need is determined by the size of your project--we’ll provide you with the tools to leverage your existing network in addition to ours! Even if your proposal doesn’t fit today, it might in the near future. We’re planning to expand in early 2014. If your timeline to close funds is flexible, go ahead and propose your project now -- and we’ll let you know when it’s time to apply.
+

@@ -1,0 +1,22 @@
+%nav.navbar.navbar-default.navbar-fixed-top{role: "navigation"}
+  .container-fluid
+    <!-- Brand and toggle get grouped for better mobile display -->
+    .navbar-header
+      %button.navbar-toggle{type: "button", "data-toggle"=>"collapse", "data-target"=>"#bs-example-navbar-collapse-1"}
+        %span.sr-only="Toggle navigation"
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to(image_tag("logos/logo.png"), root_path, class: "navbar-brand")
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    .collapse.navbar-collapse{ id: "bs-example-navbar-collapse-1"}
+      %ul.nav.navbar-nav.navbar-right
+        %li{class: ((content_for :header_tab) == "instructions" ? "active" : "")}
+          = link_to("Instructions", root_path)
+        %li{class: ((content_for :header_tab) == "investments" ? "active" : "")}
+          = link_to("Investments", investments_path)
+        %li{class: ((content_for :header_tab) == "deals" ? "active" : "")}
+          = link_to("Projects", deals_path)
+        %li{class: ((content_for :header_tab) == "account" ? "active" : "")}
+          = link_to("Logout", destroy_user_session_path, :method => :delete)

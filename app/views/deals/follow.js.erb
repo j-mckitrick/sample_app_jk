@@ -1,0 +1,2 @@
+$("#d<%= @deal.id %> .follower-count").html("<%= @deal.followers_count %>");
+$("#d<%= @deal.id %> .action-link.follow").html("<%= escape_javascript(remote_followers_url(@deal)) %>");

@@ -1,0 +1,104 @@
+<% set_header_tab("deals") %>
+<div class='errors'>
+  
+</div>
+<section class='hero next-steps'>
+  <div class='container no-pad main'>
+    <div class="row">
+      <table>
+        <tr>
+          <td class='col-sm-5'>
+            <h1 class='title'>THANK YOU</h1>
+            <p>You've successfully set up your developer account. We’re looking for a few good transactions to get started on a big vision to reinvent real estate finance. You'll find all the details for getting involved here.</p>
+            <%= link_to("START PROJECT", new_deal_path, class: "top-padding btn btn-primary btn-lg last") %>
+          </td>
+          <td class='cards col-sm-7 text-right'>
+            <%= image_tag("headers/inv-next-cards.png")%>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class='container-wrapper'>
+  <div class='container developer next-steps page'>
+    <div class='row top-padding'>
+      <div class="col-sm-12">
+		  <h1>WHAT'S NEXT</h1>
+      </div>
+    </div>
+
+    <div class='row top-padding'>
+      <div class='col-sm-7'>
+        <h4>PROPOSE YOUR FIRST PROJECT</h4>
+        <div class="row-fluid top-padding">
+          <div class="col-sm-2">
+            <%= image_tag("icons/inv_icon_newproperty.png") %>
+          </div>
+          <div class="col-sm-10">
+            <ul>
+              <li>Provide a few key details about the deal. We'll let you know right away whether your project meets current funding criteria.</li>
+            <li>
+              Qualifying projects will be invited to publish their project on our platform. We'll keep non-qualifying transactions on file for re-evalulation as we expand.
+            </li>
+            <li>
+              You can always return and edit your project, or add more projects later.
+            </li>
+            <%= link_to("START PROJECT", new_deal_path, class: "top-padding btn btn-primary last") %>
+          </div>
+        </div>
+      </div>
+      <div class='col-sm-4 col-sm-offset-1'>
+        <div class="faded">
+          <h4>REGISTER TO INVEST</h4>
+          <p>
+              Establishing an investor profile now ensures you'll be the first to know when we have deals ready for you to consider for investment. Account holders will also be able to share opinions, ask questions and vote on potential deals we're considering.  
+          </p>
+          <a href="#">Set Up Investor Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class='container-wrapper odd last_call' id='how'>
+  <div class='container'>
+    <h1>HOW WE SELECT TRANSACTIONS FOR FUNDING</h1>
+    <p>
+      It’s the early days of establishing a new kind of finance for real estate transactions. As a new concept, we can’t take on every type and size of deal just yet. With a planned <a href="http://blog.groundfloor.us/expansion/">expansion</a> in 2014 we are looking for our next round of deals. Successful U.S. investment opportunities will receive funding if they: 
+    </p>
+    <div class='row-fluid story-board'>
+      <div class='col-sm-4 step'>
+        <div class='icon'>
+          <%= image_tag("icons/sb_icon_usamb.png") %>
+        </div>
+        <p>
+          Require less than $200 thousand of debt financing
+        </p>
+      </div>
+      <div class='col-sm-4 step'>
+        <div class='icon'>
+          <%= image_tag("icons/sb_icon_group6.png") %>
+        </div>
+        <p>
+          Must be in the state of Gerogia
+        </p>
+      </div>
+      <div class='col-sm-4 step'>
+        <div class='icon'>
+          <%= image_tag("icons/sb-icon-checklist.png") %>
+        </div>
+        <p>
+          Must be looking for funds after Oct 2014
+        </p>
+      </div>
+    </div>
+
+    <p>
+      Have a proposal that fits? Great! Provide us with the basic details of your project and start gaining followers immediately. Once you gain enough followers we’ll invite you to apply for financing. The amount of followers you need is determined by the size of your project--we’ll provide you with the tools to leverage your existing network in addition to ours! Even if your proposal doesn’t fit today, it might in the near future as we continue to expand. If your timeline to close funds is flexible, go ahead and propose your project now -- and we’ll let you know when it’s time to apply. 
+    </p>
+  </div>
+</section>
+

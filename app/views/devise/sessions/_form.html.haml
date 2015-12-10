@@ -1,0 +1,29 @@
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { class: "form-horizontal form", role: "form" }) do |f|
+  - if local_assigns[:bypass].present?
+    = hidden_field_tag :b, "t"
+    
+  .form-group
+    = f.label :email, class: "control-label col-sm-4"
+    .col-sm-5
+      = f.email_field :email, :autofocus => true
+  .form-group
+    = f.label :password, class: "control-label col-sm-4"
+    .col-sm-5
+      = f.password_field :password
+  .form-group
+    .col-sm-8.col-sm-offset-4
+      -if devise_mapping.rememberable?
+        = f.check_box :remember_me
+        = f.label :remember_me, class: "inline-checkbox"
+        
+  .form-group
+    .col-sm-8.col-sm-offset-4
+      %button.btn.btn-primary.btn-large{ type: "submit" }
+        SIGN IN <i class="icon-chevron-sign-right"></i></button>
+
+  .form-group
+    .col-sm-8.col-sm-offset-4
+      - if local_assigns[:new_account_link].present?
+        = link_to("Sign up for a new account", new_user_registration_url)
+
+
