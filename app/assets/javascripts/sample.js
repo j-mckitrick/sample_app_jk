@@ -24,5 +24,9 @@ function coreFunctions() {
  $("[rel='popover']").popover();
 }
 
+function gotoAnchor(id) {
+  window.location = id;
+}
+
 $(document).ready(coreFunctions);
 $(document).on('page:load', coreFunctions);
