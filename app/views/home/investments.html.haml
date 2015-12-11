@@ -26,8 +26,15 @@
             - @published_offers.each do |deal|
               %tr.new-deal{id: "d#{deal.id}"}
                 %td.placeholder-cover-asset{width: "100px"}
-                  -# FIXME Scaling is off
-                  = image_tag url_for(:controller => 'deals', :action => 'show_photo', :id => deal.id)
+                  - if deal.has_photo
+                    -# FIXME Scaling is off
+                    = image_tag url_for(:controller => 'deals', :action => 'show_photo', :id => deal.id)
+                  - else
+                    %span
+                      No Photo
+                      %br
+                      Available
+                      %br
                 %td
                   .summary
                     %table
