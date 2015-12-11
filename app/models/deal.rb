@@ -13,7 +13,7 @@ class Deal < ActiveRecord::Base
   CAPITAL_TYPE =  ["Debt",  "Equity", "Both", "Flexible"]
   
   # RULES
-  INVALID_DATES=['Jun 2014', 'Jul 2014', '']
+  INVALID_DATES=['Jun 2014', 'Jul 2014', 'Aug 2014', 'Sept 2014', '']
   INVALID_CAPITAL_TYPES=['Equity','Both','']
   
   before_save :validate_project
