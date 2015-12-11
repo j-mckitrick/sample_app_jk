@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140523183630) do
   end
 
   create_table "photos", force: true do |t|
+    t.integer  "deal_id"
     t.string   "description"
     t.string   "content_type"
     t.string   "filename"

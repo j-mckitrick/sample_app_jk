@@ -26,7 +26,7 @@
                 .card
                   .row
                     .col-lg-4
-                      = image_tag url_for(:controller => 'deals', :action => 'show_photo')
+                      = image_tag url_for(:controller => 'deals', :action => 'show_photo', :id => deal.id)
                       -#%img{:src => 'data:image/png;base64'}
                       -#.placeholder-cover-asset
                         %span
