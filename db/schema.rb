@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140523183630) do
     t.integer  "amount_to_raise_cents",    default: 0,     null: false
     t.string   "amount_to_raise_currency", default: "USD", null: false
     t.integer  "followers_count",          default: 0
+    t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -86,6 +87,15 @@ ActiveRecord::Schema.define(version: 20140523183630) do
     t.string   "how_response"
     t.string   "why"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "description"
+    t.string   "content_type"
+    t.string   "filename"
+    t.binary   "binary_data"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -8,6 +8,8 @@ Recruiting::Application.routes.draw do
   match "/developers/next-steps", to: "home#next_steps", :as => :developers_next_steps, via: [:get]
   match '/accept_legal_message.js', to: 'deals#accept_legal_popup', :as => :accept_legal_popup, :via => [:get]
 
+  match 'deals/show_photo', to: 'deals#show_photo', :via => [:get]
+
   resources(:deals) do
     match '/publish', to: 'deals#publish', :as => :publish, :via => [:post, :put]
     match '/unpublish', to: 'deals#unpublish', :as => :unpublish, :via => [:post, :put]

@@ -1,5 +1,22 @@
 class DealsController < InheritedResources::Base
   before_filter :authenticate_user!, :except => [:index]
+
+  def import_photo
+    if params[:deal][:image_file]
+      params[:deal].each do |k, v|
+        logger.info "Checking #{k} #{v}"
+        if k == 'image_file'
+          logger.info "Image file params #{params[:deal][:image_file].inspect}"
+          @photo = Photo.new
+          @photo.image_file = params[:deal][:image_file]
+          @photo.save
+          params[:deal].delete(k) 
+          logger.info "DELETED #{k} #{v}"
+        end
+      end
+    end
+    logger.info "Params #{params}"
+  end
   
   def index
     @deals = current_user.deals.order(:name)
@@ -7,7 +24,12 @@ class DealsController < InheritedResources::Base
   end
   
   def create
+    logger.info "Params #{params}"
+    import_photo
+
     @deal = Deal.new(permitted_params.merge({ user_id: current_user.id }))
+    #@deal = Deal.new(permitted_params.delete(:image_file).merge({ user_id: current_user.id }))
+    #@deal = Deal.new(permitted_params.merge({ user_id: current_user.id }).reject{|k,v| k == :image_file})
     create! do |success, failure|
       success.html { 
         flash.now[:success] = "Your proposal was created."
@@ -25,6 +47,11 @@ class DealsController < InheritedResources::Base
   end
 
   def update
+    logger.info "Update params #{params}"
+    logger.info "Update Params #{params[:image_file].inspect}"
+    logger.info "Update Params #{params['image_file'].inspect}"
+    import_photo
+
     @deal = current_user.deals.where(:id => params[:id]).first || Deal.new(permitted_params.merge({user_id: current_user.id }))
 
     @deal.assign_attributes(permitted_params)
@@ -64,6 +91,12 @@ class DealsController < InheritedResources::Base
     @deal.unpublish
     flash[:notice] = "Your deal has successfully been unpublished and will no longer appear on the public website"
     redirect_to deals_path
+  end
+
+  def show_photo
+    @image_data = Photo.find(1)
+    @image = @image_data.binary_data
+    send_data(@image, :type => @image_data.content_type, :filename => @image_data.filename, :disposition => 'inline')
   end
   
   protected

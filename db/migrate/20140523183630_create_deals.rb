@@ -9,6 +9,7 @@ class CreateDeals < ActiveRecord::Migration
       t.string :short_description
       t.money :amount_to_raise
       t.integer :followers_count, default: 0
+      t.integer :photo_id
 
       t.timestamps
     end
