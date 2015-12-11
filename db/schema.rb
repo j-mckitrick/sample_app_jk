@@ -90,6 +90,16 @@ ActiveRecord::Schema.define(version: 20140523183630) do
     t.datetime "updated_at"
   end
 
+  create_table "photos", force: true do |t|
+    t.integer  "deal_id"
+    t.string   "description"
+    t.string   "content_type"
+    t.string   "filename"
+    t.binary   "binary_data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false

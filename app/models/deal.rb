@@ -112,5 +112,12 @@ class Deal < ActiveRecord::Base
       self.state = "published" unless self.closed?
     end
   end
-  
+
+  def has_photo
+    if Photo.where(:deal_id => self.id).size > 0
+      true
+    else
+      false
+    end
+  end
 end

@@ -26,13 +26,15 @@
                 .card
                   .row
                     .col-lg-4
-                      .placeholder-cover-asset
-                        %span
-                          No Photo
-                          %br
-                          Available
-                          %br
-                          %i.fa.fa-building.fa-2x
+                      - if deal.has_photo
+                        = image_tag url_for(:controller => 'deals', :action => 'show_photo', :id => deal.id)
+                      - else
+                        .placeholder-cover-asset
+                          %span
+                            No Photo
+                            %br
+                            Available
+                            %br
                     
                     .col-lg-8
                       .row
