@@ -48,6 +48,8 @@
                           .location
                             #{deal.short_description}
 
+                %td= link_to('Follow this deal!', :controller => 'follow', :action => 'follow_deal', :deal_id => deal.id)
+                  
                 %td.title{width: "160px"}
                   #{deal.address.city}, #{deal.address.state}
 

@@ -9,6 +9,7 @@ Recruiting::Application.routes.draw do
   match '/accept_legal_message.js', to: 'deals#accept_legal_popup', :as => :accept_legal_popup, :via => [:get]
 
   match 'deals/show_photo', to: 'deals#show_photo', :via => [:get]
+  match 'follow/follow_deal', to: 'follow#follow_deal', :via => [:get]
 
   resources(:deals) do
     match '/publish', to: 'deals#publish', :as => :publish, :via => [:post, :put]
